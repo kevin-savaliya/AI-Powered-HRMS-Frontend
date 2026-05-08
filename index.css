@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+@theme {
+  /* High Contrast Branding Colors */
+  --color-primary: #1d4ed8;
+  --color-primary-foreground: #ffffff;
+
+  --color-secondary: #f1f5f9;
+  --color-secondary-foreground: #0f172a;
+
+  --color-background: #f8fafc;
+  --color-foreground: #0f172a;
+
+  --color-border: #e2e8f0;
+  --color-card: #ffffff;
+
+  --radius-lg: 1rem;
+  --radius-md: 0.75rem;
+  --radius-sm: 0.5rem;
+
+  --animate-fade-in: fade-in 0.5s ease-out;
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+@layer base {
+  :root {
+    --primary: #1d4ed8;
+    --background: #f8fafc;
+    --border: #e2e8f0;
+  }
+
+  body {
+    background-color: #f8fafc !important;
+    color: #0f172a !important;
+    font-family: 'Outfit', sans-serif;
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+@layer utilities {
+  .card-premium {
+    @apply bg-white border border-border rounded-2xl shadow-xl shadow-primary/5 transition-all duration-300;
+  }
+}
+
+/* Custom Scrollbar for modern look */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 5px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #cbd5e1;
+}
